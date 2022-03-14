@@ -165,6 +165,18 @@
         "type": "string",
         "examples": ["airbyte-consumer"]
       },
+      "schema_registry_url": {
+        "title": "Schema Registry URL",
+        "description": "URL for the Schema Registry.",
+        "type": "string",
+        "examples": ["http://localhost:8081"]
+      },
+      "schema_registry_basic_auth_user_info": {
+        "title": "Schema Registry basic authentication for user information",
+        "description": "The basic authentication for a user is a string in the format user_id:secret.",
+        "type": "string",
+        "examples": ["user123:secret123"]
+      },
       "enable_auto_commit": {
         "title": "Enable Auto Commit",
         "description": "If true, the consumer's offset will be periodically committed in the background.",

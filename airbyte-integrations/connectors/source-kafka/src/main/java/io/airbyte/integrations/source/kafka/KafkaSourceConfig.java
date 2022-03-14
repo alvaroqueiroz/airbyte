@@ -66,6 +66,12 @@ public class KafkaSourceConfig {
         config.has("receive_buffer_bytes") ? config.get("receive_buffer_bytes").intValue() : null);
     props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
         config.has("auto_offset_reset") ? config.get("auto_offset_reset").asText() : null);
+    props.put("schema.registry.url",
+        config.has("schema_registry_url") ? config.get("schema_registry_url").asText() : null);
+    props.put("basic.auth.credentials.source",
+        config.has("schema_registry_basic_auth_user_info") ? "USER_INFO" : null);
+    props.put("basic.auth.user.info",
+        config.has("schema_registry_basic_auth_user_info") ? config.get("schema_registry_basic_auth_user_info").asText() : null);
     props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
     props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class.getName());
 
