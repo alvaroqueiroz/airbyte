@@ -78,6 +78,16 @@
         "type": "integer",
         "default": 500
       },
+      "message_format": {
+        "title": "Message Format",
+        "description": "The format of the messages in the topic",
+        "type": "string",
+        "default": "JSON",
+        "enum": [
+          "JSON",
+          "AVRO"
+        ]
+      },
       "protocol": {
         "title": "Protocol",
         "type": "object",
